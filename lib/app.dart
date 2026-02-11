@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'bindings/auth_binding.dart';
-import 'pages/login_page.dart';
 import 'routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {

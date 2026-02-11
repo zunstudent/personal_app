@@ -5,23 +5,26 @@ class PostModel {
   final String userId;
   final String desc;
   final List<String> likes;
-  final Timestamp createdAt;
+  final Timestamp? createdAt;
+  final String userName;
 
   PostModel({
     required this.id,
     required this.userId,
     required this.desc,
     required this.likes,
-    required this.createdAt,
+    this.createdAt,
+    required this.userName,
   });
 
   factory PostModel.fromMap(String id, Map<String, dynamic> map) {
     return PostModel(
       id: id,
-      userId: map['userId'],
-      desc: map['desc'],
+      userId: map['userId'] ?? '',
+      desc: map['desc'] ?? '',
       likes: List<String>.from(map['likes'] ?? []),
-      createdAt: map['createdAt'],
+      createdAt: map['createdAt'] as Timestamp?,
+      userName: map['userName'] ?? '',
     );
   }
 }
